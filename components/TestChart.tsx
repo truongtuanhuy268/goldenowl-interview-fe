@@ -89,15 +89,13 @@ const rawData = [
   },
 ]
 
-// Transform the data for the chart
-const transformData = (data) => {
+const transformData = (data: any[]) => {
   return data.map((item) => {
-    const result = {
+    const result: Record<string, number | string> = {
       subject: formatSubjectName(item.subject),
     }
 
-    // Add each level as a property
-    item.levels.forEach((level) => {
+    item.levels.forEach((level: any) => {
       result[level.level] = level.count
     })
 
@@ -105,9 +103,8 @@ const transformData = (data) => {
   })
 }
 
-// Format subject names for display
-const formatSubjectName = (subject) => {
-  const nameMap = {
+const formatSubjectName = (subject: string) => {
+  const nameMap: Record<string, string> = {
     toan: "Math",
     ngu_van: "Literature",
     ngoai_ngu: "Foreign Lang",
