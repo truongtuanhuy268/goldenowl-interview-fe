@@ -1,7 +1,11 @@
+import { ScoreChart } from "../../components/Chart"
+// import { StudentPerformanceChart } from "../../components/TestChart"
+
 const Dashboard = () => {
     return (
         <div>
-            Dashboard page
+            {/* <StudentPerformanceChart/> */}
+            <ScoreChart/>
         </div>
     )
 }
