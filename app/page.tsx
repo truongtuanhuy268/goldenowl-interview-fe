@@ -1,7 +1,4 @@
 
-import UserRegistration from "../components/UserRegistration"
-import DetailedScores from "../components/DetailScore"
-
 export default function Home() {
 
   return (
@@ -11,8 +8,7 @@ export default function Home() {
         {/* <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} /> */}
         <main className="flex-1 p-4 md:p-6 bg-gray-50">
           <div className="space-y-4 md:space-y-6 max-w-4xl mx-auto">
-            <UserRegistration />
-            <DetailedScores />
+            Home page
           </div>
         </main>
       </div>

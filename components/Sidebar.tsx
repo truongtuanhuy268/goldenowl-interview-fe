@@ -15,28 +15,30 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       {/* Sidebar */}
       <aside
         className={`
-        fixed md:static inset-y-0 left-0 z-30
-        w-64 bg-gradient-to-b from-[#f0d000] via-[#a0c020] to-[#40a0a0]
+        fixed md:static top-[57px] left-0 z-30
+        w-64 h-[calc(100vh-57px)] bg-gradient-to-b from-[#f0d000] via-[#a0c020] to-[#40a0a0]
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
       `}
       >
-        <div className="p-6">
-          <h2 className="text-xl font-semibold mb-6">Menu</h2>
-          <nav className="space-y-6">
-            <a href="/dashboard" className="block font-medium hover:underline">
-              Dashboard
-            </a>
-            <a href="/searchscore" className="block font-medium hover:underline">
-              Search Scores
-            </a>
-            <a href="/reports" className="block font-medium hover:underline">
-              Reports
-            </a>
-            <a href="/settings" className="block font-medium hover:underline">
-              Settings
-            </a>
-          </nav>
+        <div className="h-full overflow-y-auto">
+          <div className="p-6">
+            <h2 className="text-xl font-semibold mb-6">Menu</h2>
+            <nav className="space-y-6">
+              <a href="/dashboard" className="block font-medium hover:underline">
+                Dashboard
+              </a>
+              <a href="/searchscore" className="block font-medium hover:underline">
+                Search Scores
+              </a>
+              <a href="/reports" className="block font-medium hover:underline">
+                Reports
+              </a>
+              <a href="/settings" className="block font-medium hover:underline">
+                Settings
+              </a>
+            </nav>
+          </div>
         </div>
       </aside>
     </>
