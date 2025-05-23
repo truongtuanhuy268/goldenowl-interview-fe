@@ -1,6 +1,13 @@
 "use client"
 
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const pathname = usePathname()
+
+  const isActive = (path: string) => pathname === path
+
   return (
     <>
       {/* Mobile overlay - clickable to close sidebar */}
@@ -25,18 +32,38 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
           <div className="p-6">
             <h2 className="text-xl font-semibold mb-6">Menu</h2>
             <nav className="space-y-6">
-              <a href="/dashboard" className="block font-medium hover:underline">
+              <Link 
+                href="/dashboard" 
+                className={`block text-lg font-medium transition-all duration-200 hover:text-white ${
+                  isActive('/dashboard') ? 'text-xl font-bold' : ''
+                }`}
+              >
                 Dashboard
-              </a>
-              <a href="/searchscore" className="block font-medium hover:underline">
+              </Link>
+              <Link 
+                href="/searchscore" 
+                className={`block text-lg font-medium transition-all duration-200 hover:text-white ${
+                  isActive('/searchscore') ? 'text-xl font-bold' : ''
+                }`}
+              >
                 Search Scores
-              </a>
-              <a href="/reports" className="block font-medium hover:underline">
+              </Link>
+              <Link 
+                href="/reports" 
+                className={`block text-lg font-medium transition-all duration-200 hover:text-white ${
+                  isActive('/reports') ? 'text-xl font-bold' : ''
+                }`}
+              >
                 Reports
-              </a>
-              <a href="/settings" className="block font-medium hover:underline">
+              </Link>
+              <Link 
+                href="/settings" 
+                className={`block text-lg font-medium transition-all duration-200 hover:text-white ${
+                  isActive('/settings') ? 'text-xl font-bold' : ''
+                }`}
+              >
                 Settings
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
