@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vietnamese National High School Exam Score Analysis 2024
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/truongtuanhuy268/goldenowl-interview-fe/main/public/screen-shot/logo.webp" alt="Golden Owl Logo" width="200"/>
+</div>
+
+This is a Golden Owl Intern Assignment Project that provides a comprehensive analysis and visualization of the 2024 Vietnamese National High School Exam scores. The application offers an interactive dashboard to explore and analyze student performance data across different subjects and regions.
+
+## Features Preview
+
+### Dashboard Overview
+<div align="center">
+  <img src="https://raw.githubusercontent.com/truongtuanhuy268/goldenowl-interview-fe/main/public/screen-shot/dashboard.png" alt="Dashboard View" width="800"/>
+  <p>The main dashboard provides a comprehensive overview of exam statistics and performance metrics.</p>
+</div>
+
+### Detailed Reports
+<div align="center">
+  <img src="https://raw.githubusercontent.com/truongtuanhuy268/goldenowl-interview-fe/main/public/screen-shot/report.png" alt="Report View" width="800"/>
+  <p>Access detailed reports and analytics for in-depth analysis of student performance.</p>
+</div>
+
+### Settings and Customization
+<div align="center">
+  <img src="https://raw.githubusercontent.com/truongtuanhuy268/goldenowl-interview-fe/main/public/screen-shot/setting.png" alt="Settings View" width="800"/>
+  <p>Customize your viewing preferences and application settings.</p>
+</div>
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd frontend
+   ```
+
+2. **Set up environment variables**
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env.local
+   
+   # Edit .env.local with your configuration
+   # Required environment variables:
+   # - NEXT_PUBLIC_API_URL: Your backend API URL
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:3000`
+
+## Available Scripts
+
+- `npm run dev` - Starts the development server with Turbopack
+- `npm run build` - Creates a production build
+- `npm run start` - Runs the production build
+- `npm run lint` - Runs ESLint to check for code issues
+
+## Project Structure
+
+```
+frontend/
+├── app/              # Next.js app directory (pages and layouts)
+├── components/       # Reusable React components
+├── lib/             # Utility functions and shared code
+├── public/          # Static assets
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - UI library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [ShadCN](https://ui.shadcn.com/) - Component library
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- Interactive dashboard for exam score analysis
+- Comprehensive data visualization of student performance
+- Subject-wise score distribution
+- Regional performance comparison
+- Dark mode support
+- Responsive design for all devices
+- Type-safe development with TypeScript
+- Optimized performance with Turbopack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
