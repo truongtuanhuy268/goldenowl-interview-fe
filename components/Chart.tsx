@@ -1,76 +1,11 @@
 "use client"
 
 // import { TrendingUp } from "lucide-react"
+import { useEffect, useState } from "react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-
-const chartData = [
-    {
-        "subject": "toan",
-        ">8": 198392,
-        "6-8": 505836,
-        "4-6": 258654,
-        "<4": 82731
-    },
-    {
-        "subject": "ngu_van",
-        ">8": 377879,
-        "6-8": 513116,
-        "4-6": 141056,
-        "<4": 18050
-    },
-    {
-        "subject": "ngoai_ngu",
-        ">8": 133483,
-        "6-8": 219652,
-        "4-6": 363532,
-        "<4": 196038
-    },
-    {
-        "subject": "vat_li",
-        ">8": 0,
-        "6-8": 0,
-        "4-6": 0,
-        "<4": 0
-    },
-    {
-        "subject": "hoa_hoc",
-        ">8": 93333,
-        "6-8": 144959,
-        "4-6": 88447,
-        "<4": 19779
-    },
-    {
-        "subject": "sinh_hoc",
-        ">8": 34438,
-        "6-8": 182049,
-        "4-6": 116263,
-        "<4": 9628
-    },
-    {
-        "subject": "lich_su",
-        ">8": 138533,
-        "6-8": 342577,
-        "4-6": 200392,
-        "<4": 24712
-    },
-    {
-        "subject": "dia_li",
-        ">8": 218515,
-        "6-8": 382087,
-        "4-6": 96226,
-        "<4": 7854
-    },
-    {
-        "subject": "gdcd",
-        ">8": 384222,
-        "6-8": 181440,
-        "4-6": 16886,
-        "<4": 1061
-    }
-]
 
 const chartConfig = {
     ">8": {
@@ -107,6 +42,38 @@ const subjectFormatter = (subject: string) => {
 }
 
 export function ScoreChart() {
+  const [chartData, setChartData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchChartData = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/reports`)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        setChartData(data)
+      } catch (error) {
+        console.error('Error fetching chart data:', error)
+        setError(error instanceof Error ? error.message : 'Failed to fetch data')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchChartData()
+  }, [])
+
+  if (isLoading) {
+    return <div className="text-center py-4">Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-center py-4 text-red-500">Error: {error}</div>
+  }
+
   return (
     <Card>
       <CardHeader>
