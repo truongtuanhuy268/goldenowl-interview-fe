@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "G-Scores",
   description: "Student Score Management System",
+  icons: {
+    icon: "/screen-shot/logo.webp"
+  }
 };
 
 export default function RootLayout({

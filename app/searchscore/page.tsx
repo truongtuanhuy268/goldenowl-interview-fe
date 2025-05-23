@@ -1,18 +1,18 @@
 'use client'
 import React, { useState } from 'react'
 import UserRegistration from '../../components/UserRegistration'
-import DetailedScores from '../../components/DetailScore'
+import DetailedScores, { Student } from '../../components/DetailScore'
 
 const SearchScore = () => {
 
-  const [student, setStudent] = useState(null)
+  const [student, setStudent] = useState<Student | null>(null)
 
   const handleSbdSubmit = async (newSbd: string) => {
     console.log('SBD submitted:', newSbd)
     const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/students/${newSbd}`)
     const student = await data.json()
     console.log('Student data:', student)
-    setStudent(student) 
+    setStudent(student as Student) 
   }
 
   return (
