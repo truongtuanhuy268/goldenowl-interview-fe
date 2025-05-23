@@ -29,7 +29,7 @@ const chartData = [
         "<4": 196038
     },
     {
-        "subject": "vat_ly",
+        "subject": "vat_li",
         ">8": 0,
         "6-8": 0,
         "4-6": 0,
@@ -91,6 +91,21 @@ const chartConfig = {
     },
 } satisfies ChartConfig
 
+const subjectFormatter = (subject: string) => {
+  const subjectMap: { [key: string]: string } = {
+    "toan": "Math",
+    "ngu_van": "Lit",
+    "ngoai_ngu": "Lang",
+    "vat_li": "Phys",
+    "hoa_hoc": "Chem",
+    "sinh_hoc": "Bio",
+    "lich_su": "Hist",
+    "dia_li": "Geo",
+    "gdcd": "Civ"
+  }
+  return subjectMap[subject] || subject
+}
+
 export function ScoreChart() {
   return (
     <Card>
@@ -107,14 +122,17 @@ export function ScoreChart() {
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(subject) => subject}
+              tickFormatter={subjectFormatter}
             />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
+            <ChartTooltip 
+              cursor={false} 
+              content={<ChartTooltipContent indicator="dashed" />}
+              labelFormatter={subjectFormatter}
+            />
             <Bar dataKey=">8" fill="#2ecc71" radius={4} />
             <Bar dataKey="6-8" fill="#3498db" radius={4} />
             <Bar dataKey="4-6" fill="#f1c40f" radius={4} />
             <Bar dataKey="<4" fill="#e74c3c" radius={4} />
-
           </BarChart>
         </ChartContainer>
       </CardContent>

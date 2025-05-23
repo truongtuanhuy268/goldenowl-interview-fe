@@ -2,7 +2,7 @@
 
 export default function Header({ onMenuToggle }: { onMenuToggle: () => void }) {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-[#0a1b7a] text-white p-4 flex items-center justify-between md:justify-center">
+    <header className="sticky top-0 z-50 w-full min-w-full border-b bg-[#0a1b7a] text-white p-4 flex items-center justify-between md:justify-center">
       <button className="md:hidden text-white p-2" onClick={onMenuToggle} aria-label="Toggle menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,5 +25,3 @@ export default function Header({ onMenuToggle }: { onMenuToggle: () => void }) {
     </header>
   )
 }
-// Compare this snippet from app/layout.tsx:
-// import type { Metadata } from "next";

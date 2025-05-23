@@ -16,7 +16,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       <aside
         className={`
         fixed md:static top-[57px] left-0 z-30
-        w-64 h-[calc(100vh-57px)] bg-gradient-to-b from-[#f0d000] via-[#a0c020] to-[#40a0a0]
+        w-64 h-[calc(100vh-57px)] md:h-[calc(100vh-57px)] bg-gradient-to-b from-[#f0d000] via-[#a0c020] to-[#40a0a0]
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
       `}
