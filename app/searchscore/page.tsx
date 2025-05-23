@@ -9,11 +9,10 @@ const SearchScore = () => {
 
   const handleSbdSubmit = async (newSbd: string) => {
     console.log('SBD submitted:', newSbd)
-    const data = await fetch(`http://localhost:3001/students/${newSbd}`)
+    const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/students/${newSbd}`)
     const student = await data.json()
     console.log('Student data:', student)
-    if (!student.error) setStudent(student)
-    else setStudent(null)
+    setStudent(student) 
   }
 
   return (
