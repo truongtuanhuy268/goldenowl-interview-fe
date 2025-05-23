@@ -38,8 +38,8 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
-   cd frontend
+   git clone [<your-repository-url>](https://github.com/truongtuanhuy268/goldenowl-interview-fe.git)
+   cd goldenowl-interview-fe
    ```
 
 2. **Set up environment variables**
@@ -49,7 +49,7 @@ Follow these steps to set up and run the project locally:
    
    # Edit .env.local with your configuration
    # Required environment variables:
-   # - NEXT_PUBLIC_API_URL: Your backend API URL
+   # - NEXT_PUBLIC_BACKEND_URL: Your backend API URL
    ```
 
 3. **Install dependencies**
