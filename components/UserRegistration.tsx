@@ -36,7 +36,7 @@ export default function UserRegistration({handleSbdSubmit}: { handleSbdSubmit: (
               className="w-full sm:max-w-md" 
             />
             <Button 
-              className="bg-black hover:bg-gray-800 w-full sm:w-auto" 
+              className="bg-black hover:bg-gray-800 w-full sm:w-auto text-white dark:bg-white dark:text-black dark:hover:bg-gray-200" 
               onClick={handleOnSubmit}
             >
               Submit
